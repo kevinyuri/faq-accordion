@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-image: url("assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  background-color: hsl(275, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 22px;
+}
+
+.faq-card {
+  background-color: hsl(0, 0%, 100%);
+  padding: 24px 24px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.faq-card header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.faq-card header img {
+  opacity: 0.7;
+}
+
+.faq-card .faq-header {
+  color: hsl(292, 42%, 14%);
+  padding-left: 22px;
+
+}
+
+.question-container h2 {
+  font-size: 18px;
+  color: hsl(292, 42%, 14%);
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  margin-right: 28px;
+}
+
+.question-container h2:hover {
+  cursor:pointer;
+  color: hsl(295, 37%, 55%);
+}
+
+.question-container .flex-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 22px 0;
+}
+
+.faq-card .flex-question.inactive::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: hsl(275, 100%, 97%);
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  bottom: -4px;
+}
+
+.question-container:last-child .flex-question.inactive::after{
+  display: none;
+}
+
+p {
+  display: none;
+}
+
+.question-container p {
+  padding: 0 0 14px 0;
+  color: hsl(292, 16%, 49%);
+  line-height: 1.6;
+  position: relative;
+}
+
+.flex-question.ativo + p::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: hsl(275, 100%, 97%);
+  display: block;
+  position: absolute;
+  border-radius: 2px;
+  bottom: -4px;
+}
+
+.flex-question a:hover{
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
+
+@media only screen and (min-width: 650px) {
+  body {
+    background-image: url("assets/images/background-pattern-desktop.svg");
+  }
+  .faq-card {
+    max-width: 600px;
+    padding: 32px 32px;
+  }
+  .faq-card h1 {
+    font-size: 36px;
+  }
+  .question-container h2 {
+    font-size: 16px;
+  }
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
